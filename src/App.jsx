@@ -18,6 +18,8 @@ export const goods = [
 export const App = () => {
   const [selectedGood, setSelectedGood] = useState('Jam');
 
+  function reset() { setSelectedGood('') };
+
   return (
     <main className="section container">
       {selectedGood ? (
@@ -27,7 +29,7 @@ export const App = () => {
             data-cy="ClearButton"
             type="button"
             className="delete ml-3"
-            onClick={() => setSelectedGood('')}
+            onClick={reset}
           />
         </h1>
       ) : (
@@ -52,7 +54,7 @@ export const App = () => {
                     data-cy="RemoveButton"
                     type="button"
                     className="button is-info"
-                    onClick={() => setSelectedGood('')}
+                    onClick={reset}
                   >
                     -
                   </button>
